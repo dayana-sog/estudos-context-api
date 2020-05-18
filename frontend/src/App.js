@@ -1,10 +1,18 @@
 import React from 'react';
+import { Router } from 'react-router-dom';
+
+import Routes from './routes';
+import history from './history';
+
+import { AuthProvider } from './Context/AuthConfig';
 
 function App() {
   return (
-    <div className="App">
-      Teste
-    </div>
+    <AuthProvider>
+      <Router history={history}>
+        <Routes />
+      </Router>
+    </AuthProvider>
   );
 }
 
